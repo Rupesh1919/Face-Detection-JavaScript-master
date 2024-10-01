@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/w3css/3/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<head>
+    <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          border: 1px solid #e7e7e7;
+          background-color: #f3f3f3;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: #666;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+          background-color: #ddd;
+        }
+        
+        li a.active {
+          color: white;
+          background-color: #04AA6D;
+        }
+        </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="models.html">Models</a></li>
+    <li><a href="architecture.html">Architecture</a></li>
+    <li><a href="index.html">Demo</a></li>
+</ul>
+
+<!-- Slide Show -->
+<section>
+  <img class="mySlides" src="home1.png"
+  style="width:1500px; height:500px">
+  <img class="mySlides" src="home2.png"
+  style="width:1500px; height:500px">
+  <img class="mySlides" src="home3.png"
+  style="width:1500px; height:500px">
+</section>
+
+<section class="w3-container w3-center w3-content" style="max-width:100%">
+  <h1 class="w3-wide">Face Detection</h1>
+  <p class="w3-opacity"><i>We love Software Development for AI</i></p>
+  <p class="w3-justify">We will be setting up real time face detection through a webcam using AI. This AI is so quick that we are able to draw in real time the various faces and expressions of every person in the video without much performance overhead. We will be using the Face API JS library built on Tensor Flow to setup the face detection.</p>
+  <p class="w3-justify">The most accurate face detector is a SSD (Single Shot Multibox Detector), which is basically a CNN based on MobileNet V1, with some additional box prediction layers stacked on top of the network.
+  </p>
+  <p class="w3-justify">Furthmore, face-api.js implements an optimized Tiny Face Detector, basically an even tinier version of Tiny Yolo v2 utilizing depthwise seperable convolutions instead of regular convolutions, which is a much faster, but slightly less accurate face detector compared to SSD MobileNet V1.
+    Lastly, there is also a MTCNN (Multi-task Cascaded Convolutional Neural Network) implementation, which is mostly around nowadays for experimental purposes however.</p>
+
+</section>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+  <a href="#"><i class="fa fa-pinterest-p"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-flickr"></i></a>
+  <a href="#"><i class="fa fa-linkedin"></i></a>
+</footer>
+
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+
+</body>
+</html>
+
